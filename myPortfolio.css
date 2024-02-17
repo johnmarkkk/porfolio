@@ -1,104 +1,180 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 body{
-    background: rgb(26, 26, 26);
-    color:white;
-    
+    background-color: yellow;
+    height: 1000px;
 }
 
-.header{
-    width: 100%;
+.container .section-one{
     height: 100vh;
-    position: relative;
-    
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.header #myProfile {
-    float: right;
-    margin-right: 100px;
-    height: 600px;
-    object-fit: cover; 
-  
-}
 
-.header #header-one{
-    width: 100%;
-    height: 100px;
+.container .section-one .header{
+    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color: rgb(26, 26, 26);
-    box-shadow: 0px 2px 2px rgba(127, 79, 79, 0.1);
+    padding: 20px 30px;
 }
 
-#header-one #logo{
-    margin-left: 100px;
-    font-size: 30px;
+.section-one .header p{
+    font-size: 25px;
 }
 
-#header-one #logo span{
-    color: rgb(118, 118, 236);
-    
+.section-one .header p>span{
+    color: blue;
 }
 
-#header-one #menu{
-    margin-right: 50px;
+.section-one .header ul li{
+    display: inline-block;
+    margin: 10px;
 }
 
-#header-one #menu ul{
-    display: flex;
-    list-style: none;
-
-}
-
-#menu ul li:hover{
-    color: rgb(118, 118, 236); 
-    
-
-}
-
-#header-one #menu ul li{
-    margin: 30px;
-    font-size: 15px;
-}
-
-.header #name{
-    position: absolute;
-    top: 45%;
-    left: 100px;
-    font-size: 100px;
-    width: 500px;
-    line-height: 100px;
-}
-
-.header #name span{
-    position: absolute;
-    top: 170px;
-    left: 0px;
-    font-size: 50px;
-    color: rgb(118, 118, 236);
-}
-
-.About-me{
-    background-color: white;
-    color: black;
-    display: flex;
-    height: 100vh;
-}
-
-.About-me #myProfile-one{
+.footer{
     background-color: black;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px 0px 90px;
 }
 
-.About-me #description{
-    
-   
+.footer p{
+    font-size: 70px;
+    flex: 1;
+    margin-top: 100px;
 }
+
+.footer p span{
+    font-size: 50px;
+    color: blue;
+}
+
+.footer img{
+    object-fit: cover;
+    width: 600px;
+    max-width: 50%;
+}
+
+.burger-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(10px);
+    color: white;
+    display: none;
+    flex-direction: column;
+}
+
+.burger-menu > li:first-child{
+    text-align: right;
+}
+
+.burger-menu li{
+    width: 100%;
+    transition: calc(0.5s);
+    padding: 10px;
+
+}
+
+.burger-menu li:hover {
+    background-color: gray;
+}
+
+.burger-menu li#close:hover {
+    background-color: transparent;
+}
+.burger-menu #close{
+    padding-right: 20px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 834px) {
+    .footer p{
+        font-size: 60px;
+    }
+
+    .footer p span{
+        font-size: 40px
+    }
+}
+
+@media screen and (max-width: 708px) {
+    .footer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 50px;
+
+    }
+
+    .footer img{
+        max-width: 75%;
+        flex: 2;
+    }
+
+    .footer p{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (max-width: 549px){
+    .section-one .header ul{
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+
+    }
+    
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+    }
+
+    .footer p{
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+
+    .footer p span{
+        font-size: 20px;
+    }
+
+    .footer img{
+        max-width: 100%;
+        flex: 3;
+        padding-bottom: 20px;
+    }
+
+    
+}
+
+
+
+
