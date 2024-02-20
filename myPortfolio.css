@@ -27,6 +27,7 @@ body{
 }
 
 .section-one .header p{
+    padding-left: 20px;
     font-size: 25px;
 }
 
@@ -34,10 +35,6 @@ body{
     color: blue;
 }
 
-.section-one .header ul li{
-    display: inline-block;
-    margin: 10px;
-}
 
 .footer{
     background-color: black;
@@ -65,42 +62,84 @@ body{
     max-width: 50%;
 }
 
-.burger-menu{
+.top-header li{
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+
+.top-header li:hover{
+    color: blue;
+}
+
+.duplicate {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -250px; /* Start offscreen */
     height: 100vh;
     width: 250px;
     z-index: 5;
     background-color: rgba(255, 255, 255, 0.045);
-    backdrop-filter: blur(10px);
     color: white;
-    display: none;
+    display: flex;
     flex-direction: column;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
 }
 
-.burger-menu > li:first-child{
-    text-align: right;
+.burger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+    cursor: pointer;
+    right: 10px;
+    top: 20px;
+    padding-right: 10px;
+    transition: 0.3s;
 }
+
+.bar {
+    display: none;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+
 
 .burger-menu li{
     width: 100%;
     transition: calc(0.5s);
     padding: 10px;
+    cursor: pointer;
+    list-style: none;
 
 }
 
-.burger-menu li:hover {
+.burger-menu li#close + li{
+    margin-top: 70px;
+}
+
+.burger-menu li#close~li:hover {
     background-color: gray;
 }
 
-.burger-menu li#close:hover {
-    background-color: transparent;
-}
 .burger-menu #close{
-    padding-right: 20px;
+    width: 20px;
+    padding-right: 30px;
     margin-left: 0px;
     cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.burger-menu #close:hover{
+    background-color: red;
 }
 
 
@@ -112,6 +151,8 @@ body{
     .footer p span{
         font-size: 40px
     }
+
+   
 }
 
 @media screen and (max-width: 708px) {
@@ -133,27 +174,24 @@ body{
         margin-top: 10px;
     }
 
+    .top-header li{
+        padding: 10px;
+    }
+
+    .section-one .header p{
+        padding-left: 10px;
+}
+
+@media screen and (max-width: 619px){
+    .top-header li{
+        padding: 2px;
+    }
+}
 }
 
 @media screen and (max-width: 549px){
-    .section-one .header ul{
+    .section-one .header .original{
         display: none;
-    }
-
-    .burger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-
-    }
-    
-    .bar {
-        width: 30px;
-        height: 3px;
-        background-color: white;
     }
 
     .footer p{
@@ -171,10 +209,9 @@ body{
         flex: 3;
         padding-bottom: 20px;
     }
-
+    
+    .bar{
+        display: block;
+    }
     
 }
-
-
-
-
